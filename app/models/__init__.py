@@ -1,0 +1,87 @@
+"""SQLAlchemy models. Importing this package registers every table."""
+from app.models.base import (
+    AuditOutcome,
+    EngagementStatus,
+    JobStatus,
+    RemediationStatus,
+    RetestStatus,
+    ScopeEntryType,
+    Severity,
+    ValidationStatus,
+    utcnow,
+)
+from app.models.engagement import Engagement, EngagementScope, Target, engagement_testers
+from app.models.findings import (
+    CweEntry,
+    Evidence,
+    FindingImport,
+    FindingSource,
+    FindingStatusChange,
+    Remediation,
+    Report,
+    Retest,
+    Vulnerability,
+)
+from app.models.identity import Permission, Role, User, role_permissions
+from app.models.inventory import Asset, Endpoint, Subdomain, Technology
+from app.models.manual import AuthzCheck, AuthzResult, AuthzSubject, ManualWorkflow, WorkflowStep
+from app.models.mapping import EndpointLink, EndpointParameter, WebCookie, WebForm
+from app.models.operations import ActivityLog, ApplicationSetting
+from app.models.testing import (
+    ExecutionJob,
+    JobEvent,
+    TestCase,
+    TestExecution,
+    ToolRegistry,
+    ToolRun,
+)
+
+__all__ = [
+    "ActivityLog",
+    "ApplicationSetting",
+    "Asset",
+    "AuditOutcome",
+    "AuthzCheck",
+    "AuthzResult",
+    "AuthzSubject",
+    "Endpoint",
+    "EndpointLink",
+    "EndpointParameter",
+    "Engagement",
+    "EngagementScope",
+    "EngagementStatus",
+    "CweEntry",
+    "Evidence",
+    "ExecutionJob",
+    "FindingImport",
+    "FindingSource",
+    "FindingStatusChange",
+    "JobEvent",
+    "JobStatus",
+    "ManualWorkflow",
+    "Permission",
+    "Remediation",
+    "RemediationStatus",
+    "Report",
+    "Retest",
+    "RetestStatus",
+    "Role",
+    "ScopeEntryType",
+    "Severity",
+    "Subdomain",
+    "Target",
+    "Technology",
+    "TestCase",
+    "TestExecution",
+    "ToolRegistry",
+    "ToolRun",
+    "User",
+    "ValidationStatus",
+    "Vulnerability",
+    "WebCookie",
+    "WorkflowStep",
+    "WebForm",
+    "engagement_testers",
+    "role_permissions",
+    "utcnow",
+]
