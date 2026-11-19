@@ -1,0 +1,15 @@
+# Runtime dependencies (Phase 1). Exact transitive versions: requirements.lock
+Flask>=3.1,<4
+Flask-SQLAlchemy>=3.1,<4
+Flask-Migrate>=4.1,<5
+Flask-Login>=0.6.3,<0.7
+Flask-WTF>=1.2,<2
+Flask-Limiter>=3.8
+argon2-cffi>=23.1
+gunicorn>=23
+python-dotenv>=1.0
+idna>=3.7
+publicsuffixlist>=1.0
+defusedxml>=0.7
+reportlab>=5
+Pillow>=13

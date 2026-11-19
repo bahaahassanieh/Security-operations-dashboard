@@ -1,0 +1,33 @@
+{
+  "test_cases": [
+    {
+      "test_id": "CUSTOM-ATHN-01",
+      "framework": "House Standard",
+      "framework_version": "1.0",
+      "framework_reference": "HS-ATHN-01",
+      "category": "Authentication",
+      "title": "Single sign-on session fixation",
+      "description": "Confirm the SSO flow issues a fresh session after authentication.",
+      "procedure": "Capture the session identifier before and after completing the SSO login with a test account.",
+      "required_tools": ["Browser", "Burp Suite"],
+      "expected_results": "A new session identifier is issued once authentication completes.",
+      "evidence_requirements": "Request/response pairs showing the identifier before and after login, tokens redacted.",
+      "default_severity": "high",
+      "validation_criteria": "A tester reproduces reuse of a pre-authentication session after login.",
+      "remediation_guidance": "Regenerate the session identifier whenever the privilege level changes.",
+      "automation_level": "manual"
+    },
+    {
+      "test_id": "CUSTOM-BUSL-01",
+      "category": "Business Logic",
+      "title": "Loyalty points cannot go negative",
+      "description": "Confirm the server rejects redemptions larger than the available balance.",
+      "procedure": "With a test account, attempt to redeem more points than the balance in the sandbox.",
+      "expected_results": "The redemption is refused and the balance is unchanged.",
+      "evidence_requirements": "The request and response showing the refusal, plus the unchanged balance.",
+      "default_severity": "medium",
+      "validation_criteria": "A tester reproduces a redemption that should fail and confirms the balance stays correct.",
+      "remediation_guidance": "Validate balances on the server inside a transaction before applying a redemption."
+    }
+  ]
+}
